@@ -82,41 +82,9 @@ export default function Page() {
 
       <main id="home">
         <section className="hero hero--kredit">
-          <div className="hero__motion" aria-hidden="true">
-            <svg className="hero__motion-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
-              <defs>
-                <radialGradient id="krdA" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#3566c0" stopOpacity="0.8" />
-                  <stop offset="100%" stopColor="#3566c0" stopOpacity="0" />
-                </radialGradient>
-                <radialGradient id="krdB" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#1f7fa6" stopOpacity="0.62" />
-                  <stop offset="100%" stopColor="#1f7fa6" stopOpacity="0" />
-                </radialGradient>
-              </defs>
-              <circle className="blob blob--a" cx="430" cy="270" r="440" fill="url(#krdA)" />
-              <circle className="blob blob--b" cx="1090" cy="640" r="460" fill="url(#krdB)" />
-              <g stroke="rgba(150,182,228,0.12)" strokeWidth="1">
-                <line x1="-160" y1="250" x2="1620" y2="250" />
-                <line x1="-160" y1="360" x2="1620" y2="360" />
-                <line x1="-160" y1="470" x2="1620" y2="470" />
-                <line x1="-160" y1="580" x2="1620" y2="580" />
-                <line x1="-160" y1="690" x2="1620" y2="690" />
-              </g>
-              <g className="hero__flow" stroke="rgba(125,170,235,0.5)" strokeWidth="1.6">
-                <line x1="-160" y1="360" x2="1620" y2="360" />
-                <line x1="-160" y1="470" x2="1620" y2="470" />
-                <line x1="-160" y1="580" x2="1620" y2="580" />
-              </g>
-              <polyline points="-160,560 220,520 480,540 760,470 1040,420 1340,330 1620,300" fill="none" stroke="rgba(150,200,255,0.45)" strokeWidth="2" />
-              <g fill="#7ba8e6">
-                <circle cx="220" cy="520" r="4" />
-                <circle cx="760" cy="470" r="4" />
-                <circle cx="1040" cy="420" r="4" />
-                <circle cx="1340" cy="330" r="4.5" />
-              </g>
-            </svg>
-          </div>
+          <video className="hero__video" autoPlay muted loop playsInline poster="/images/kredit-hero-poster.jpg" aria-hidden="true">
+            <source src="/videos/kredit-hero.mp4" type="video/mp4" />
+          </video>
           <div className="hero__overlay" />
           <div className="hero__content">
             <div className="hero__copy hero__copy--animate">
