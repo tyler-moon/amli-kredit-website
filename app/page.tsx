@@ -29,7 +29,6 @@ const companies = [
   { name: "AMLI Group", href: "https://amli.group" },
   { name: "AMLI Mountains", href: "https://mountains.amli.group" },
   { name: "AMLI Property", href: "https://property.amli.group" },
-  { name: "AMLI Kredit", href: "https://kredit.amli.group" },
   { name: "AMLI Asia Capital", href: "https://capital.amli.group" },
   { name: "AMLI Greens", href: "https://greens.amli.group" }
 ];
