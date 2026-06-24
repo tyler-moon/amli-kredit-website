@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   applicationName: "AMLI Kredit",
   title: "AMLI Kredit | Financing built on trust",
   description:
-    "AMLI Kredit is a licensed lender providing flexible, transparent personal and SME financing to underserved Malaysian segments — bridging financial gaps and funding disciplined growth.",
+    "AMLI Kredit is a licensed lender providing property-backed, personal and SME financing to underserved Malaysians — from 1% per month, approval in 2–3 days, up to 108-month tenure, zero early-settlement fee.",
   openGraph: {
     title: "AMLI Kredit | Financing built on trust",
     description:
-      "Licensed personal and SME financing — flexible, transparent, accessible.",
+      "Licensed property-backed, personal and SME financing — fast, transparent, fair.",
     images: [
       {
         url: "/images/kl-skyline-hero.jpg",
