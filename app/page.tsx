@@ -156,8 +156,8 @@ export default function Page() {
 
       <main id="home">
         <section className="hero hero--kredit">
-          <video className="hero__video" autoPlay muted loop playsInline poster="/images/kredit-hero-poster.jpg" aria-hidden="true">
-            <source src="/videos/kredit-hero.mp4" type="video/mp4" />
+          <video className="hero__video" autoPlay muted loop playsInline poster="/images/kredit-hero-poster.jpg?v=2" aria-hidden="true">
+            <source src="/videos/kredit-hero.mp4?v=2" type="video/mp4" />
           </video>
           <div className="hero__overlay" />
           <div className="hero__content">
