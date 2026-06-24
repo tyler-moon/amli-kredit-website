@@ -156,8 +156,8 @@ export default function Page() {
 
       <main id="home">
         <section className="hero hero--kredit">
-          <video className="hero__video" autoPlay muted loop playsInline poster="/images/kredit-hero-poster.jpg?v=2" aria-hidden="true">
-            <source src="/videos/kredit-hero.mp4?v=2" type="video/mp4" />
+          <video className="hero__video" autoPlay muted loop playsInline poster="/images/kredit-hero-poster.jpg?v=3" aria-hidden="true">
+            <source src="/videos/kredit-hero.mp4?v=3" type="video/mp4" />
           </video>
           <div className="hero__overlay" />
           <div className="hero__content">
@@ -239,7 +239,7 @@ export default function Page() {
         </section>
 
         <section className="statement-band" data-reveal>
-          <img className="statement-band__bg" src="/images/kredit-hero-poster.jpg" alt="" aria-hidden="true" loading="lazy" />
+          <img className="statement-band__bg" src="/images/kredit-hero-poster.jpg?v=3" alt="" aria-hidden="true" loading="lazy" />
           <div className="statement-band__overlay" aria-hidden="true" />
           <div className="statement-band__inner">
             <p className="eyebrow eyebrow--light">Why AMLI Kredit</p>
