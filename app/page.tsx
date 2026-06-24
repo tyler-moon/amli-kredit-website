@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, FormEvent } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import Logo from "./Logo";
 
 const ACCENT = "#1f2a38";
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/kredit.contact@amli.group";
 const pillars = ["Secured", "Personal", "SME", "Licensed"];
 
 const products = [
@@ -65,20 +66,38 @@ const companies = [
 ];
 
 export default function Page() {
-  function handleEnquiry(e: FormEvent<HTMLFormElement>) {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleEnquiry(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = e.currentTarget;
     const get = (n: string) =>
       ((f.elements.namedItem(n) as HTMLInputElement | HTMLTextAreaElement | null)?.value || "").trim();
+    // Honeypot — if a bot fills the hidden field, silently succeed without sending.
+    if (get("_honey")) { setStatus("sent"); f.reset(); return; }
     const name = get("name");
-    const phone = get("phone");
-    const email = get("email");
-    const message = get("message");
-    const subject = encodeURIComponent(`Financing enquiry — ${name || "AMLI Kredit"}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\n${message}`
-    );
-    window.location.href = `mailto:kredit.contact@amli.group?subject=${subject}&body=${body}`;
+    const payload = {
+      name,
+      phone: get("phone"),
+      email: get("email"),
+      message: get("message"),
+      _subject: `Financing enquiry — ${name || "AMLI Kredit"}`,
+      _template: "table",
+      _captcha: "false"
+    };
+    setStatus("sending");
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error("bad status");
+      setStatus("sent");
+      f.reset();
+    } catch {
+      setStatus("error");
+    }
   }
 
   useEffect(() => {
@@ -349,16 +368,33 @@ export default function Page() {
               <p className="eyebrow">Apply</p>
               <h2>Bridge the gap.</h2>
               <p>Tell us about your personal or business financing needs and our team will respond with a clear, personalised plan.</p>
-              <form className="contact-form" onSubmit={handleEnquiry}>
-                <div className="contact-form__row">
-                  <input className="contact-form__input" type="text" name="name" placeholder="Name" autoComplete="name" required />
-                  <input className="contact-form__input" type="tel" name="phone" placeholder="Phone" autoComplete="tel" />
+              {status === "sent" ? (
+                <div className="contact-form__success" role="status">
+                  <p className="contact-form__success-title">Thank you — your enquiry is on its way.</p>
+                  <p>Our team will be in touch shortly. For anything urgent, call +60 3-6263 6464.</p>
                 </div>
-                <input className="contact-form__input" type="email" name="email" placeholder="Email" autoComplete="email" required />
-                <textarea className="contact-form__input contact-form__textarea" name="message" placeholder="What financing are you looking for?" rows={4} required />
-                <button className="button button--primary" type="submit">Send enquiry</button>
-                <p className="contact-form__note">Opens your email app, addressed to our team.</p>
-              </form>
+              ) : (
+                <form className="contact-form" onSubmit={handleEnquiry}>
+                  <div className="contact-form__row">
+                    <input className="contact-form__input" type="text" name="name" placeholder="Name" autoComplete="name" required />
+                    <input className="contact-form__input" type="tel" name="phone" placeholder="Phone" autoComplete="tel" />
+                  </div>
+                  <input className="contact-form__input" type="email" name="email" placeholder="Email" autoComplete="email" required />
+                  <textarea className="contact-form__input contact-form__textarea" name="message" placeholder="What financing are you looking for?" rows={4} required />
+                  <input type="text" name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" className="contact-form__honey" />
+                  <button className="button button--primary" type="submit" disabled={status === "sending"}>
+                    {status === "sending" ? "Sending…" : "Send enquiry"}
+                  </button>
+                  {status === "error" ? (
+                    <p className="contact-form__note contact-form__note--error">
+                      Something went wrong. Please email us directly at{" "}
+                      <a className="text-link" href="mailto:kredit.contact@amli.group">kredit.contact@amli.group</a>.
+                    </p>
+                  ) : (
+                    <p className="contact-form__note">Sent straight to our team — we typically reply within one working day.</p>
+                  )}
+                </form>
+              )}
             </div>
           </div>
         </section>

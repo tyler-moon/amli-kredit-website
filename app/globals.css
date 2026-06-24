@@ -2664,3 +2664,17 @@ video.central-asia__background {
 .contact-form .button { align-self: flex-start; margin-top: 0.2rem; }
 .contact-form__note { font-size: 0.78rem; color: var(--slate); margin: 0.1rem 0 0; }
 @media (max-width: 520px) { .contact-form__row { grid-template-columns: 1fr; } }
+
+/* ============ Contact form — auto-send states ============ */
+.contact-form__honey { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.contact-form .button[disabled] { opacity: 0.6; cursor: default; }
+.contact-form__note--error { color: #9a2738; }
+.contact-form__success {
+  border: 1px solid var(--hairline); border-radius: 12px; background: #ffffff;
+  padding: 1.4rem 1.5rem; margin-top: 1.3rem;
+}
+.contact-form__success-title {
+  font-family: Montserrat, Arial, sans-serif; font-weight: 600; color: var(--burgundy);
+  margin: 0 0 0.4rem; font-size: 1.05rem;
+}
+.contact-form__success p:last-child { margin: 0; color: var(--slate); font-size: 0.95rem; }
