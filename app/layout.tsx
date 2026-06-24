@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   applicationName: "AMLI Kredit",
   title: "AMLI Kredit | Financing built on trust",
   description:
-    "AMLI Kredit is a Shariah-compliant lender providing flexible, transparent personal and SME financing to underserved Malaysian segments — bridging financial gaps and funding disciplined growth.",
+    "AMLI Kredit is a licensed lender providing flexible, transparent personal and SME financing to underserved Malaysian segments — bridging financial gaps and funding disciplined growth.",
   openGraph: {
     title: "AMLI Kredit | Financing built on trust",
     description:
-      "Shariah-compliant personal and SME financing — flexible, transparent, accessible.",
+      "Licensed personal and SME financing — flexible, transparent, accessible.",
     images: [
       {
         url: "/images/kl-skyline-hero.jpg",

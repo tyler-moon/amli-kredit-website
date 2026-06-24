@@ -4,12 +4,12 @@ import { useEffect } from "react";
 import Logo from "./Logo";
 
 const ACCENT = "#1f2a38";
-const pillars = ["Personal", "SME", "Shariah-Compliant", "Transparent"];
+const pillars = ["Personal", "SME", "Licensed", "Transparent"];
 
 const services = [
   { name: "Personal Financing", sector: "Individuals", text: "Flexible, transparent personal credit designed to bridge financial gaps and support everyday goals." },
   { name: "SME Financing", sector: "Businesses", text: "Working-capital and growth financing for small and medium enterprises underserved by conventional banks." },
-  { name: "Shariah-Compliant", sector: "Ethical", text: "Financing structured to Shariah principles — clear terms, fair treatment and no hidden cost." }
+  { name: "Transparent Terms", sector: "Fair", text: "Clear terms, fair treatment and no hidden cost — financing you can understand and trust." }
 ];
 
 const values = [
@@ -93,7 +93,7 @@ export default function Page() {
                 <br /> on trust.
               </h1>
               <p className="hero__subtitle">
-                AMLI Kredit is a Shariah-compliant lender providing flexible, transparent
+                AMLI Kredit is a licensed lender providing flexible, transparent
                 personal and SME financing to underserved Malaysians — bridging financial
                 gaps and funding disciplined growth.
               </p>
@@ -112,13 +112,13 @@ export default function Page() {
           <div className="section__inner">
             <div className="section-heading section-heading--wide">
               <p className="eyebrow">About AMLI Kredit</p>
-              <h2>Fair, flexible, Shariah-compliant credit.</h2>
+              <h2>Fair, flexible, transparent credit.</h2>
               <p>
                 AMLI Kredit offers more flexible and transparent financing than conventional
                 institutions — bridging financial gaps with speed and personalised plans for
-                individuals and SMEs underserved by traditional banks. Structured to Shariah
-                principles and supported by the financial strength of the wider AMLI group,
-                we lend on merit and treat every customer fairly.
+                individuals and SMEs underserved by traditional banks. Built on clear,
+                transparent terms and supported by the financial strength of the wider AMLI
+                group, we lend on merit and treat every customer fairly.
               </p>
             </div>
           </div>
