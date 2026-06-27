@@ -54,7 +54,7 @@ const faqs = [
   { q: "What are the interest rates?", a: "As a licensed lender, our rates are regulated under the Moneylenders Act 1951. Property-backed financing carries a transparent monthly rate held to a ceiling of 1% per month (12% per annum) — it never goes higher — with your exact rate based on the loan amount and credit profile. No compounding, no hidden charges." },
   { q: "How long does approval take?", a: "Once your documents are submitted and verified, approval is typically granted within 2 to 3 working days." },
   { q: "Is there a penalty for early settlement?", a: "No. There are zero penalty fees if you settle your financing earlier than the agreed tenure." },
-  { q: "What is the maximum repayment tenure?", a: "For property financing, we offer flexible repayment of up to 108 months (9 years)." }
+  { q: "What is the maximum repayment tenure?", a: "For property financing, we offer flexible repayment of up to 96 months (8 years)." }
 ];
 
 const companies = [
@@ -215,7 +215,7 @@ export default function Page() {
                 <p className="stat__label">Loans funded</p>
               </div>
               <div className="stat" data-reveal style={{ transitionDelay: "160ms" }}>
-                <p className="stat__num"><span data-count="108" data-display="108">108</span></p>
+                <p className="stat__num"><span data-count="96" data-display="96">96</span></p>
                 <p className="stat__label">Months max tenure</p>
               </div>
             </div>
